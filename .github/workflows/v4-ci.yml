@@ -21,6 +21,10 @@ jobs:
         with:
           node-version: '22'
       - name: Syntax check
-        run: node --check v4/engine.js
+        run: |
+          node --check v4/engine.js
+          node --check v4/coach-layer.js
       - name: Training engine tests
         run: node v4/tests/engine.test.cjs
+      - name: Coach experience tests
+        run: node v4/tests/coach-layer.test.cjs
