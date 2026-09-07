@@ -1,0 +1,23 @@
+const fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const js=fs.readFileSync(path.join(root,'coach-layer.js'),'utf8');
+function ok(c,m){if(!c)throw new Error(m)}
+const coachPos=html.indexOf('src="./coach-layer.js"'), enginePos=html.indexOf('src="./engine.js"');
+ok(coachPos>=0,'coach layer script missing');
+ok(enginePos>=0,'engine script missing');
+ok(coachPos<enginePos,'coach layer must load before engine so speech interception is ready');
+['椅子坐站','徒手深蹲','罗马尼亚硬拉 RDL','墙面俯卧撑','高台俯卧撑','低台俯卧撑','标准俯卧撑','单臂划船','弹力带划船','弹力带下拉','辅助引体','引体向上','第二种划船（替代垂直拉）','农夫行走'].forEach(x=>ok(js.includes(`'${x}'`),'missing guide '+x));
+ok(js.includes("style:'coach'"),'coach voice must be default');
+ok(js.includes("value=\"brief\""),'brief voice option missing');
+ok(js.includes("n===10"),'10-second rest cue missing');
+ok(js.includes("wakeLock.request('screen')"),'screen wake lock missing');
+ok(js.includes("scrollIntoView"),'mobile training focus scroll missing');
+ok(js.includes("aria-live"),'accessibility live status missing');
+ok(js.includes('动作标准优先于次数'),'quality-first coaching cue missing');
+ok(js.includes('某一下开始明显变形时'),'form-stop rule missing');
+ok(js.includes('window.__v4CoachLayer'),'coach layer test/export hook missing');
+console.log('PASS coach layer static contract');
+console.log('PASS 14 movement variants have teaching guidance');
+console.log('PASS voice 2.0 / rest cue / wake lock / mobile polish contract');
+console.log('ALL V4 COACH LAYER TESTS PASSED');
