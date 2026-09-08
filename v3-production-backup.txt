@@ -1,0 +1,2 @@
+Production V3 rollback snapshot marker.
+Root production before V4 cutover: main@ebc3fe44828797fa2cfe63736574b4f2e57ec477
