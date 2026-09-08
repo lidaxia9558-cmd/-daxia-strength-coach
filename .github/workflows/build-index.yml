@@ -1,26 +1,10 @@
-name: Build coach index
+name: Legacy V3 Build (disabled)
+
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'source/**'
-      - '.github/workflows/build-index.yml'
-permissions:
-  contents: write
+  workflow_dispatch:
+
 jobs:
-  build:
+  info:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - name: Assemble and verify
-        run: |
-          cat source/part00.txt source/part01.txt source/part02.txt source/part03.txt > index.html
-          echo '66a5aa4db09f4e0eaafdea6508ac0c3e750a90e900a10202a95b82cfd3c2a11a  index.html' | sha256sum -c -
-      - name: Commit generated index
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          git diff --cached --quiet && exit 0
-          git commit -m 'Build strength coach web app'
-          git push
+      - run: echo "Legacy V3 index builder disabled after V4 production release."
