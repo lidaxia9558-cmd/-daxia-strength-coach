@@ -2,7 +2,7 @@ name: V4 CI
 
 on:
   push:
-    branches: [v4-dev]
+    branches: [v4-dev, v4-rc]
     paths:
       - 'v4/**'
       - '.github/workflows/v4-ci.yml'
@@ -28,3 +28,5 @@ jobs:
         run: node v4/tests/engine.test.cjs
       - name: Coach experience tests
         run: node v4/tests/coach-layer.test.cjs
+      - name: Release regression tests
+        run: node v4/tests/release.test.cjs
