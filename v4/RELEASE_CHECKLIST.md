@@ -25,7 +25,11 @@ Status: RC
 - [ ] 30-minute boundary regression
 - [ ] Calibration reset / re-calibration regression
 - [ ] Final production build smoke test
-- [ ] Rollback point verified before root replacement
+- [x] Rollback point verified before root replacement
+
+## Rollback target
+Dedicated rollback branch: `v3-production-backup-20260908`
+Snapshot commit: `ebc3fe44828797fa2cfe63736574b4f2e57ec477`
 
 ## Release rule
 V4.0 must not replace the current V3 production root until all engineering gates above pass. If any blocker is found, keep V3 live and fix V4 in RC first.
