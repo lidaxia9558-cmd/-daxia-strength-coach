@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - v4.1-dev
+      - v4.1-rc
     paths:
       - 'v4.1/**'
       - '.github/workflows/v4-1-ci.yml'
@@ -20,8 +21,11 @@ jobs:
       - name: Syntax check
         run: |
           node --check v4.1/combined-planner.js
+          node --check v4.1/preview/combined-planner.js
           node --check v4.1/preview/app.js
       - name: Combined planner tests
         run: node --test v4.1/tests/combined-planner.test.cjs
       - name: Preview contract tests
         run: node --test v4.1/tests/preview-contract.test.cjs
+      - name: Release regression tests
+        run: node --test v4.1/tests/release.test.cjs
