@@ -13,19 +13,20 @@ test('preview presents one combined daily workout',()=>{
   assert.match(html,/热身 \/ 活动/);
 });
 
-test('preview loads planner before app',()=>{
-  const planner=html.indexOf('../combined-planner.js');
+test('preview loads local planner before app',()=>{
+  const planner=html.indexOf('./combined-planner.js');
   const application=html.indexOf('./app.js');
   assert.ok(planner>0);
   assert.ok(application>planner);
 });
 
-test('preview inherits V4 strength profile and loads without mutating V4 key',()=>{
+test('preview inherits V4 strength profile and safely writes compatible progress back',()=>{
   assert.match(app,/V4KEY='daxiaCoachV4'/);
   assert.match(app,/v4\.profile/);
   assert.match(app,/v4\.loads/);
   assert.match(app,/v4\.targets/);
-  assert.doesNotMatch(app,/localStorage\.setItem\(V4KEY/);
+  assert.match(app,/saveV4/);
+  assert.match(app,/syncV4Entry/);
 });
 
 test('home cardio includes low-impact sequence and controlled rope intervals',()=>{
@@ -42,6 +43,12 @@ test('preview records combined history and perceived effort',()=>{
   assert.match(html,/偏轻松/);
   assert.match(html,/刚刚好/);
   assert.match(html,/偏吃力/);
+});
+
+test('preview can restore an interrupted workout',()=>{
+  assert.match(app,/persistActive/);
+  assert.match(app,/restoreActive/);
+  assert.match(app,/visibilitychange/);
 });
 
 test('safety copy remains visible',()=>{
