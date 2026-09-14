@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f6f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="100岁运动教练">
+<title>大虾 · 100岁运动教练</title>
+<style>
+:root{--bg:#f6f6f1;--card:#fff;--text:#171917;--muted:#747872;--line:#e4e6df;--green:#2e6c50;--green2:#e4f0e8;--blue:#426b8f;--blue2:#e7eef5;--warm:#f7efe3;--soft:#f0f2ed;--warn:#8b473f}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","SF Pro Display",sans-serif;-webkit-font-smoothing:antialiased}button,select,input{font:inherit}button{touch-action:manipulation}.app{max-width:820px;margin:auto;padding:max(16px,env(safe-area-inset-top)) 14px calc(44px + env(safe-area-inset-bottom))}.header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px}.eyebrow,.mini{font-size:12px;color:var(--muted)}h1{font-size:27px;margin:4px 0 6px;letter-spacing:-.02em}.lead{font-size:13px;line-height:1.55;color:var(--muted)}.pill{padding:8px 10px;border-radius:999px;background:var(--green2);color:var(--green);font-size:12px;font-weight:760;white-space:nowrap}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}.hero{padding:18px}.heroTop{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}.heroTime{font-size:42px;font-weight:850;line-height:1;letter-spacing:-.04em}.heroTime small{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0}.dayLabel{font-size:14px;color:var(--green);font-weight:800;margin-bottom:7px}.segments{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}.segment{border-radius:15px;padding:12px;background:var(--soft)}.segment b{display:block;font-size:20px;margin:3px 0}.segment.strength{background:var(--green2)}.segment.cardio{background:var(--blue2)}.segment .mini{line-height:1.35}.why{margin-top:12px;padding:11px 12px;border-radius:14px;background:var(--warm);font-size:12px;line-height:1.6;color:#635b4c}.btn{border:0;border-radius:15px;min-height:54px;padding:0 16px;font-weight:780}.primary{background:var(--green);color:#fff}.secondary{background:var(--soft);color:var(--text)}.ghost{background:#fff;border:1px solid var(--line);color:var(--muted)}.wide{width:100%}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.planList{display:grid;gap:8px;margin-top:12px}.planItem{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:11px;background:#fff}.planItem .ico{width:30px;height:30px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:14px;font-weight:800}.planItem b{font-size:14px}.goal{font-size:12px;color:var(--green);font-weight:780;text-align:right}.coach{display:none}.coach.show{display:block}.stage{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.phase{font-size:12px;color:var(--muted)}.move{font-size:31px;font-weight:850;line-height:1.08;margin-top:5px;letter-spacing:-.03em}.timer{font-size:48px;font-weight:850;line-height:1;font-variant-numeric:tabular-nums;text-align:right}.timerLabel{text-align:right;font-size:11px;color:var(--muted);margin-bottom:4px}.goalbox{margin:15px 0;border-radius:16px;padding:14px;background:var(--soft)}.goalbox.cardio{background:var(--blue2)}.goalMain{font-size:23px;font-weight:840}.cue{font-size:13px;line-height:1.65;margin-top:8px;color:#40433f}.talk{font-size:12px;color:var(--blue);margin-top:9px;font-weight:680}.barbg{height:8px;background:#ebede8;border-radius:999px;overflow:hidden;margin:14px 0}.bar{height:100%;background:var(--green);width:0;transition:width .2s}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:12px;color:var(--muted);padding:5px 8px;border:1px solid var(--line);border-radius:999px}.actions{display:grid;grid-template-columns:2fr 1fr;gap:9px;margin-top:14px}.triple{display:grid;grid-template-columns:1.2fr 1fr .8fr;gap:8px;margin-top:10px}.sessionTop{display:none}.sessionTop.show{display:flex}.stepCount{font-size:12px;color:var(--muted)}.finish{display:none;text-align:center;background:var(--green2)}.finish.show{display:block}.rates{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:13px}.rate{min-height:46px;padding:9px 14px;background:#fff;border:1px solid #bdd6c6;border-radius:13px}.prefs details{border-top:1px solid var(--line);margin-top:10px;padding-top:11px}.prefs summary{font-weight:750;cursor:pointer}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.field select{width:100%;min-height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:8px 10px;font-size:16px}.toggle{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px solid var(--line)}.toggle:last-child{border-bottom:0}.toggle input{width:22px;height:22px;accent-color:var(--green)}.note{font-size:12px;line-height:1.6;color:var(--muted)}.warn{color:var(--warn);font-weight:700}.hidden{display:none!important}
+@media(max-width:560px){.segments{grid-template-columns:1fr 1fr}.segment:last-child{grid-column:1/-1}.move{font-size:27px}.timer{font-size:44px}.grid{grid-template-columns:1fr}.actions,.triple{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom));z-index:5;background:rgba(246,246,241,.94);padding:8px 0}.heroTime{font-size:38px}}
+</style>
+</head>
+<body>
+<main class="app" id="app">
+<header class="header"><div><div class="eyebrow">V4.1 · 完整家庭运动教练</div><h1>100岁运动教练</h1><div class="lead">你负责出现。今天练什么、练多久、强弱怎么分配，由教练替你安排。</div></div><div class="pill" id="dayPill">生成中</div></header>
+
+<section class="card hero" id="summaryCard">
+  <div class="heroTop"><div><div class="dayLabel" id="dayLabel">今天</div><div class="heroTime"><span id="totalMinutes">40</span><small> 分钟左右</small></div></div><div class="mini" id="dateText"></div></div>
+  <div class="segments">
+    <div class="segment strength"><div class="mini">力量</div><b id="strengthMinutes">22 分钟</b><div class="mini" id="strengthSummary">A 组动作</div></div>
+    <div class="segment cardio"><div class="mini">有氧</div><b id="cardioMinutes">15 分钟</b><div class="mini" id="cardioSummary">室内低冲击</div></div>
+    <div class="segment"><div class="mini">热身 / 活动</div><b id="mobilityMinutes">3 分钟</b><div class="mini">让身体进入状态</div></div>
+  </div>
+  <div class="why" id="whyText">今天的安排会根据最近训练和恢复自动变化。</div>
+  <button class="btn primary wide" id="startSession" style="margin-top:13px">开始今天训练</button>
+</section>
+
+<section class="card" id="planCard"><div class="row"><div><b>今天跟着做</b><div class="mini">不用自己决定顺序</div></div><div class="mini" id="planMeta"></div></div><div class="planList" id="planList"></div></section>
+
+<section class="card coach" id="coachCard">
+  <div class="row sessionTop" id="sessionTop"><div><b>正在训练</b><div class="mini" id="sessionElapsed">已用 0:00</div></div><div class="stepCount" id="stepCount">1 / 1</div></div>
+  <div class="stage" style="margin-top:12px"><div><div class="phase" id="phase">准备</div><div class="move" id="moveName">热身</div></div><div><div class="timerLabel" id="timerLabel">剩余</div><div class="timer" id="timerValue">180</div></div></div>
+  <div class="barbg"><div class="bar" id="progressBar"></div></div>
+  <div class="goalbox" id="goalBox"><div class="mini">现在只做这一件事</div><div class="goalMain" id="goalMain">轻松活动身体</div><div class="cue" id="cueText"></div><div class="talk" id="talkTest"></div></div>
+  <div class="tags"><span class="tag" id="typeTag">热身</span><span class="tag" id="loadTag">无需负重</span><span class="tag" id="intensityTag">不要做到累</span></div>
+  <div class="actions" id="timedActions"><button class="btn primary" id="timedButton">开始这一段</button><button class="btn ghost" id="finishEarly">今天到这里</button></div>
+  <div class="triple hidden" id="repActions"><button class="btn primary" id="hit">完成目标</button><button class="btn secondary" id="miss">没做到目标</button><button class="btn ghost" id="skip">跳过</button></div>
+</section>
+
+<section class="card finish" id="finishCard"><h2 style="margin:0 0 6px">今天的运动已经完成 ✓</h2><div class="lead" id="finishText">力量和有氧都记录好了。今天整体感觉如何？</div><div class="rates"><button class="rate" data-rate="easy">偏轻松</button><button class="rate" data-rate="good">刚刚好</button><button class="rate" data-rate="hard">偏吃力</button></div><div class="note" id="savedText" style="margin-top:12px"></div></section>
+
+<section class="card prefs" id="prefsCard"><div class="row"><div><b>有氧偏好</b><div class="mini">只需设置一次，日常不需要选择</div></div><span class="pill">自动安排</span></div><details><summary>查看 / 调整</summary><div class="grid"><div class="field"><label>默认有氧策略</label><select id="cardioPreference"><option value="mixed">低冲击为主，合适时穿插跳绳</option><option value="lowImpact">只做低冲击有氧</option><option value="rope">合适时优先跳绳</option></select></div></div><div class="toggle"><div><b style="font-size:14px">家里可以跳绳</b><div class="mini">不会连续高冲击安排</div></div><input type="checkbox" id="jumpRope" checked></div><div class="toggle"><div><b style="font-size:14px">语音教练</b><div class="mini">动作切换和倒计时提醒</div></div><input type="checkbox" id="voice" checked></div><button class="btn secondary wide" id="savePrefs" style="margin-top:10px">保存设置并重新安排今天</button></details></section>
+
+<section class="card"><div class="note">安全原则：动作标准优先，不追求力竭。出现尖锐疼痛、胸痛、明显头晕、晕厥感或异常气短时停止训练。跳绳若出现小腿、跟腱、膝踝明显不适，直接改为低冲击有氧。</div></section>
+</main>
+<script src="./combined-planner.js"></script>
+<script src="./app-release.js"></script>
+</body>
+</html>
