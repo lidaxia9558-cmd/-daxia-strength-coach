@@ -22,7 +22,7 @@ jobs:
         run: |
           node --check v4.1/combined-planner.js
           node --check v4.1/preview/combined-planner.js
-          node --check v4.1/preview/app.js
+          node --check v4.1/preview/app-release.js
       - name: Combined planner tests
         run: node --test v4.1/tests/combined-planner.test.cjs
       - name: Preview contract tests
