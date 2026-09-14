@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 
 const html=fs.readFileSync('v4.1/preview/index.html','utf8');
-const app=fs.readFileSync('v4.1/preview/app.js','utf8');
+const app=fs.readFileSync('v4.1/preview/app-release.js','utf8');
 
 test('preview presents one combined daily workout',()=>{
   assert.match(html,/100岁运动教练/);
@@ -13,9 +13,9 @@ test('preview presents one combined daily workout',()=>{
   assert.match(html,/热身 \/ 活动/);
 });
 
-test('preview loads local planner before app',()=>{
+test('preview loads local planner before release runtime',()=>{
   const planner=html.indexOf('./combined-planner.js');
-  const application=html.indexOf('./app.js');
+  const application=html.indexOf('./app-release.js');
   assert.ok(planner>0);
   assert.ok(application>planner);
 });
