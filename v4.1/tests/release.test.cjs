@@ -5,14 +5,15 @@ const path=require('node:path');
 const P=require('../combined-planner.js');
 
 const ROOT=path.resolve(__dirname,'..');
-const app=fs.readFileSync(path.join(ROOT,'preview/app.js'),'utf8');
+const app=fs.readFileSync(path.join(ROOT,'preview/app-release.js'),'utf8');
 const html=fs.readFileSync(path.join(ROOT,'preview/index.html'),'utf8');
 const planner=fs.readFileSync(path.join(ROOT,'combined-planner.js'),'utf8');
 
-test('preview is self-contained for staging and production root copy',()=>{
+test('release build is self-contained for staging and production root copy',()=>{
   assert.match(html,/src="\.\/combined-planner\.js"/);
-  assert.match(html,/src="\.\/app\.js"/);
+  assert.match(html,/src="\.\/app-release\.js"/);
   assert.ok(fs.existsSync(path.join(ROOT,'preview/combined-planner.js')));
+  assert.ok(fs.existsSync(path.join(ROOT,'preview/app-release.js')));
 });
 
 test('V4.1 preserves V4 data compatibility',()=>{
@@ -51,6 +52,7 @@ test('strength outcomes still drive conservative progression',()=>{
   assert.match(app,/t\.reps=Number\(t\.reps\|\|m\.min\)\+1/);
   assert.match(app,/t\.misses>=2/);
   assert.match(app,/plan\.strength\.planKey==='LIGHT'/);
+  assert.match(app,/const cur=vp\[id\],n=ladder\.indexOf\(cur\)\+dir/);
 });
 
 test('cardio remains home-first and jump rope is not daily default',()=>{
