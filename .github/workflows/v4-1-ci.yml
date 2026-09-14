@@ -1,0 +1,23 @@
+name: V4.1 Development CI
+
+on:
+  push:
+    branches:
+      - v4.1-dev
+    paths:
+      - 'v4.1/**'
+      - '.github/workflows/v4-1-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: node --check v4.1/combined-planner.js
+      - name: Combined planner tests
+        run: node --test v4.1/tests/combined-planner.test.cjs
